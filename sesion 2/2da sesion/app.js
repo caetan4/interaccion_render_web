@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var img = new Image();
 
-var path = "centro-2026-ciclo1-main/S01-Intro/ejercicio02/img/blorp.jpg"; // Ruta de la imagen
+var path = "/sesion 2/2da sesion/img/blorp.jpg"; // Ruta corregida de la imagen
 img.src = path;
 
 
