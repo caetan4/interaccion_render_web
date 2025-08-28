@@ -33,9 +33,9 @@ tl.to(".circulo", {
                             backgroundColor: "#ffe539",
                             ease: "none"
                         });
-                        gsap.to(fondo, {
+                        gsap.to(".fondo", {
                             duration: 1,
-                            backgroundColor: "#142192",
+                            backgroundColor: "#30366fff",
                             ease: "none"
                         });
                     }
