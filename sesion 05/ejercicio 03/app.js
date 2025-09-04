@@ -1,4 +1,4 @@
-console.log("Sesion 5. Ejercicio02: Geometrias");
+console.log("Sesion 5. Ejercicio03: Matcap");
 console.log("THREE: ", THREE);
 
 // 1. Definir nuestro canvas
@@ -16,15 +16,19 @@ const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 
 
 //mesh
 /////Geometrias
-const geometry = new THREE.SphereGeometry(1,18,18);
+const geometry = new THREE.TorusGeometry();
 
 const material = new THREE.MeshPhongMaterial({
-  flatShading: true, specular : "#ffffffff", shininess: 100, color: "rgba(212, 51, 51, 1)"});
+  flatShading: true,
+});
 
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
-mesh.position.z = -4;
-mesh.rotation.x = 45;
+const textureLoader = new THREE.TextureLoader();
+var MatcapMaterial;
+var mesh ;
+
+var Matcap = textureLoader.load('./textures/matcap/matcap-porcelain-white.png', function (texture) {
+ console.log('Matcap loaded.');
+});
 
 
 //Renderer
@@ -41,13 +45,8 @@ function animate() {
   mesh.rotation.x += 0.01;
  mesh.rotation.y = 45;
  renderer.render(scene, camera);
- }
- animate();
 
- const topLight = new THREE.PointLight("#506b04ff", 100, 100);
-topLight.position.y = 5;
-scene.add(topLight);
+}
+// animate();
 
-const frontLight = new THREE.PointLight("#0000ff", 10, 100);
-frontLight.position.set(3,1,3);
-scene.add(frontLight);
+ 
