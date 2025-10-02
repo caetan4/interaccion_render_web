@@ -1,47 +1,31 @@
-
 console.log("composicion");
 console.log(gsap);
 
 
-const boton = document.getElementById("btn");
-console.log(boton);
+const sol = document.querySelector(".circulo");
+const fondo = document.querySelector(".fondo");
+const suelo = document.querySelector(".suelo");
+window.addEventListener("click", () => {
+    let tl = gsap.timeline();
 
-window.addEventListener("mousedown", function (eventData) {
+    tl.to(sol, {
+        duration: 6,
+        ease: "power1.inOut",
+        motionPath: {
+            path: [
+                { x: 0, y: 0 }, 
+                { x: window.innerWidth / 2 - 50, y: -400 }, 
+                { x: window.innerWidth - 100, y: 0 } 
+            ],
+            curviness: 1.5
+        }
+    });
 
-    let tl = gsap.timeline({ease: "power1.inOut"});
-   
-// Animación horizontal (de izquierda a derecha)
-tl.to(".circulo", {
-    duration: 3,
-    x: window.innerWidth - 100,
-    ease: "power1.inOut",
-    onComplete: () => {
-        // Animación vertical (sube y baja suavemente)
-        tl.to(".circulo", {
-            duration: 2,
-            y: 100,
-            ease: "power2.out",
-            onComplete: () => {
-                gsap.to(".circulo", {
-                    duration: 2,
-                    y: window.innerHeight - 100,
-                    ease: "power2.in",
-                    // Extra: cambiar color del sol y fondo
-                    onComplete: () => {
-                        gsap.to(".circulo", {
-                            duration: 1,
-                            backgroundColor: "#ffe539",
-                            ease: "none"
-                        });
-                        gsap.to(".fondo", {
-                            duration: 1,
-                            backgroundColor: "#30366fff",
-                            ease: "none"
-                        });
-                    }
-                });
-            }
-        });
-    }
+
+    tl.to(fondo, {
+        duration: 6,
+        backgroundColor: "#201c81ff", 
+        ease: "power1.inOut"
+    }, "<"); // "<" = empieza al mismo tiempo que el sol
 });
-});
+
