@@ -16,15 +16,18 @@ const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 
 
 //mesh
 /////Geometrias
-const geometry = new THREE.SphereGeometry(1,18,18);
-
+const geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 16 ); 
 const material = new THREE.MeshPhongMaterial({
-  flatShading: true, specular : "#ffffffff", shininess: 100, color: "rgba(212, 51, 51, 1)"});
+  flatShading: true,
+  specular: "#f71010",   
+  shininess: 100,
+  color: "#d43333"       
+});
+const torusKnot = new THREE.Mesh( geometry, material ); scene.add( torusKnot );
 
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
-mesh.position.z = -4;
-mesh.rotation.x = 45;
+scene.add( torusKnot );
+torusKnot.position.z = -4;
+torusKnot.rotation.x = 45;
 
 
 //Renderer
@@ -38,16 +41,16 @@ renderer.render(scene, camera);
 // Tip para animar nuestro mesh:
 function animate() {
     requestAnimationFrame(animate);
-  mesh.rotation.x += 0.01;
- mesh.rotation.y = 45;
+  torusKnot.rotation.x += 0.01;
+ torusKnot.rotation.y = 45;
  renderer.render(scene, camera);
  }
  animate();
 
- const topLight = new THREE.PointLight("#506b04ff", 100, 100);
+ const topLight = new THREE.PointLight("#6b0404", 100, 100);  // rojo oscuro
 topLight.position.y = 5;
 scene.add(topLight);
 
-const frontLight = new THREE.PointLight("#0000ff", 10, 100);
-frontLight.position.set(3,1,3);
+const frontLight = new THREE.PointLight("#151589", 10, 100); // azul oscuro
+frontLight.position.set(3, 1, 3);
 scene.add(frontLight);

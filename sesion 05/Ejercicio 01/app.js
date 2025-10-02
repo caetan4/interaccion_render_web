@@ -19,7 +19,11 @@ const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 
 const geometry = new THREE.SphereGeometry(1,18,18);
 
 const material = new THREE.MeshPhongMaterial({
-  flatShading: true, specular : "#ffffffff", shininess: 100, color: "rgba(212, 51, 51, 1)"});
+  flatShading: true,
+  specular: "#f71010",   
+  shininess: 100,
+  color: "#d43333"       
+});
 
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
@@ -44,10 +48,10 @@ function animate() {
  }
  animate();
 
- const topLight = new THREE.PointLight("#506b04ff", 100, 100);
+const topLight = new THREE.PointLight("#6b0404", 100, 100);  // rojo oscuro
 topLight.position.y = 5;
 scene.add(topLight);
 
-const frontLight = new THREE.PointLight("#0000ff", 10, 100);
-frontLight.position.set(3,1,3);
+const frontLight = new THREE.PointLight("#151589", 10, 100); // azul oscuro
+frontLight.position.set(3, 1, 3);
 scene.add(frontLight);
