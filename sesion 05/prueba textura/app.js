@@ -19,11 +19,11 @@ const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 
 const geometry = new THREE.SphereGeometry(1,18,18);
 
 const loader = new THREE.TextureLoader();
-const texture = loader.load( 'img/7880cfd6018e0e025a5797b6d4bc6cc6.jpg' );
+const texture = loader.load( 'img/e90dbd_0363b430cf144fb0bf31cf36d5ad5463~mv2_d_3752_1786_s_2.avif' );
 texture.colorSpace = THREE.SRGBColorSpace;
  
 const material = new THREE.MeshBasicMaterial({
-  color: 0xFF8844,
+  
   map: texture,
 });
 const mesh = new THREE.Mesh(geometry, material);
@@ -49,7 +49,7 @@ function animate() {
  }
  animate();
 
- const topLight = new THREE.PointLight("#506b04ff", 100, 100);
+ const topLight = new THREE.PointLight("#506b04ff", 1000, 100);
 topLight.position.y = 5;
 scene.add(topLight);
 
