@@ -47,10 +47,10 @@ function animate() {
  }
  animate();
 
- const topLight = new THREE.PointLight("#6b0404", 100, 100);  // rojo oscuro
+ const topLight = new THREE.PointLight("#6b0404", 100, 100); 
 topLight.position.y = 5;
 scene.add(topLight);
 
-const frontLight = new THREE.PointLight("#151589", 10, 100); // azul oscuro
+const frontLight = new THREE.PointLight("#151589", 10, 100); 
 frontLight.position.set(3, 1, 3);
 scene.add(frontLight);
