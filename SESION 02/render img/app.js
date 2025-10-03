@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var img = new Image();
 
-var path = "/sesion 2/2da sesion/img/blorp.jpg"; // Ruta corregida de la imagen
+var path = "img/blorp.jpg"; // Ruta corregida de la imagen
 img.src = path;
 
 

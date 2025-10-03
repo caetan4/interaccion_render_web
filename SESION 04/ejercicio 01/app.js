@@ -19,9 +19,10 @@ const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 
 const geometry = new THREE.SphereGeometry(1,18,18);
 const material = new THREE.MeshPhongMaterial({
   // flatShading: true,   // 👈 lo quitamos
-  specular: "#f37b7bff",
+  specular: "#f37b7b",
   shininess: 1000,
-  color: "#fe9494ff",
+  color: "#fe9494",
+
   wireframe: true        // 👈 mostramos solo líneas
 });
 

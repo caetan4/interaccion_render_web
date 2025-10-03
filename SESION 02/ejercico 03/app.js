@@ -68,8 +68,8 @@ window.addEventListener("mouseup", function (eventData) {
  
  ctx.beginPath();
  ctx.ellipse(eventData.x,eventData.y,120,120,0,0,Math.PI*2);
-ctx.fill();
-ctx.stroke(); 
+ ctx.fill();
+ ctx.stroke(); 
 
 
 

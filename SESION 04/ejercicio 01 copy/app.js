@@ -23,7 +23,7 @@ const texture = loader.load( 'img/7880cfd6018e0e025a5797b6d4bc6cc6.jpg' );
 texture.colorSpace = THREE.SRGBColorSpace;
  
 const material = new THREE.MeshBasicMaterial({
-  color: 0xFF8844,
+ color: "#fe9494",
   map: texture,
 });
 const mesh = new THREE.Mesh(geometry, material);
@@ -49,7 +49,7 @@ function animate() {
  }
  animate();
 
- const topLight = new THREE.PointLight("#506b04ff", 100, 100);
+ const topLight = new THREE.PointLight("#fe9494", 100, 100);
 topLight.position.y = 5;
 scene.add(topLight);
 
