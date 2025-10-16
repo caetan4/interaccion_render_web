@@ -41,13 +41,17 @@ sol.position.z = -5;
 scene.add(sol);
 
 // 💡 Luz central (afecta a los planetas)
-const luzCentral = new THREE.PointLight(0xffee88, 5, 50);
+const luzCentral = new THREE.PointLight(0xffee88, 200, 50);
 luzCentral.position.copy(sol.position);
 scene.add(luzCentral);
 
 const frontLight = new THREE.PointLight(0x1b046e, 100, 100);
 frontLight.position.set(7, 3, 3);
 scene.add(frontLight);
+const light = new THREE.PointLight(0x1b046eee, 30, 50);
+light.position.set(0, 0, +10);
+scene.add(light);
+
 
 // ✨ Estrellas de fondo
 function crearEstrellas(cantidad = 400) {
