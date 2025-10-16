@@ -83,14 +83,14 @@ const planetaNuevoTexture = {
   albedo: loader.load('./assets/nueva tex/ravine-cliff-unity/ravine-cliff_albedo.png'),
   ao: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_ao.png'),
   height: loader.load('./assets/nueva tex/ravine-cliff-unity/ravine-cliff_height.png'),
-  normal: loader.load('./assets/nueva tex/ravine-cliff-unity/ravine-cliff_normal.png')
+  normal: loader.load('./assets/nueva tex/ravine-cliff-unity/ravine-cliff_normal-ogl.png')
 };
 
 const piedra= {
   albedo: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_albedo.png'),
   ao: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_ao.png'),
   height: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_height.png'),
-  normal: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_normal.png')
+  normal: loader.load('./assets/nueva tex/rocky-rugged-terrain-unity/rocky-rugged-terrain_1_normal-ogl.png')
 };
 
 // 🌍 Material planeta 1 (original)
@@ -129,15 +129,15 @@ const piedraMaterial = new THREE.MeshStandardMaterial({
 });
 
 // 🌎 Planeta 1 + torus
-const planeta = new THREE.Mesh(planetaGeo, planetaMaterial);
-const torus = new THREE.Mesh(torusGeo, piedraMaterial);
+const planeta = new THREE.Mesh(planetaGeo, piedraMaterial);
+const torus = new THREE.Mesh(torusGeo, planetaMaterial);
 torus.rotation.x = Math.PI / 2; // eje X
 planeta.position.x = 3;
 torus.position.x = 3;
 scene.add(planeta, torus);
 
 // 🌑 Planetas adicionales
-const planeta2 = new THREE.Mesh(planeta2Geo, planetaNuevoMaterial);
+const planeta2 = new THREE.Mesh(planeta2Geo, piedraMaterial);
 const planeta3 = new THREE.Mesh(planeta3Geo, piedraMaterial);
 const planeta4 = new THREE.Mesh(planeta4Geo, planetaNuevoMaterial);
 
