@@ -55,7 +55,7 @@ window.addEventListener("click", () => {
     if(currentIntersect) {
     gsap.to(object1.rotation, {
         duration: 2,
-        y: object1.rotation.y + Math.PI * 4, 
+        y: object1.rotation.y + Math.PI * 2, 
         ease: "power2.inOut"
     });
        object1.material.color = new THREE.Color("#ffff00");
